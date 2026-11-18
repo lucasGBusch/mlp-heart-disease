@@ -1,0 +1,3 @@
+ativacao,perda,acuracia,precisao,recall,f1
+relu,0.2372,0.9074,0.5477,0.096,0.1634
+tanh,0.2372,0.908,0.572,0.0906,0.1564
