@@ -8,6 +8,13 @@ from sklearn.preprocessing import StandardScaler
 ARQUIVO = Path(__file__).resolve().parent / "heart_disease_health_indicators_BRFSS2015.csv.zip"
 ALVO = "HeartDiseaseorAttack"
 
+# Dataset: Heart Disease Health Indicators (BRFSS 2015 - CDC / Kaggle).
+# Contém 253.680 registros e 21 atributos clínicos, comportamentais e
+# socioeconômicos (sem valores ausentes). Todos os 21 atributos são mantidos
+# por representarem fatores de risco cardiovascular reconhecidos (pressão alta,
+# colesterol, IMC, tabagismo, AVC, diabetes, atividade física, idade, etc.).
+
+
 
 def preparar_dados():
     # Lê o CSV diretamente do arquivo ZIP.

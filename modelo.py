@@ -7,6 +7,13 @@ from sklearn.metrics import precision_score, recall_score, f1_score
 from dados import preparar_dados
 
 
+# Hiperparâmetros do treinamento:
+# - TAXA_APRENDIZADO = 0.001: taxa padrão do otimizador Adam, equilibrando
+#   estabilidade na descida do gradiente e velocidade de convergência.
+# - EPOCAS = 12: suficiente para estabilizar perda e acurácia em ~162 mil
+#   amostras de treino sem sobreajuste excessivo.
+# - BATCH_SIZE = 256: aproveita vetorização em um dataset grande (253.680
+#   registros) com atualizações de gradiente estáveis.
 TAXA_APRENDIZADO = 0.001
 EPOCAS = 12
 BATCH_SIZE = 256
@@ -85,6 +92,9 @@ def main():
 
         print("Vetor de erros por época:",
               np.round(historico.history["loss"], 4))
+        print(f"Total de iterações (batches): {len(registro.erros)}")
+        print("Vetor de erros por iteração:",
+              np.round(registro.erros, 4))
 
         pd.DataFrame({
             "iteracao": range(1, len(registro.erros) + 1),
